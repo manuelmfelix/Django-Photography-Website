@@ -1,0 +1,50 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
+{% endblock %}
+{% block content %}
+
+<!-- Main Image Section -->
+<section class="main-image-section">
+    <div class="main-image-container">
+        {% if catalog.cover_image %}
+        <img src="{{ catalog.cover_image }}" alt="{{ catalog.name }}">
+        {% else %}
+        <p>No cover image available.</p>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Text Section -->
+<section class="text-section">
+    <div class="left-column">
+        <h2>{{ catalog.name }}</h2>
+        <p>{{ catalog.year }}</p>
+        <p>{{ catalog.camera }}</p>
+        <p>{{ catalog.lens }}</p>
+    </div>
+    <div class="right-column">
+        <p>{{ catalog.description|safe }}</p>
+    </div>
+</section>
+
+<!-- Photos Section -->
+<div class="scroll-gallery-container">
+    <div class="scroll-gallery">
+        {% for photo in photos %}
+        <div class="scroll-item">
+            <img src="{{ photo.image.url }}" alt="{{ photo.title }}" style="max-height: 500px;">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="display-container">
+        <img class="display-image" src="" alt="Display Image">
+        <button class="close-button">&times;</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'portfolio/js/portfolio.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Photography Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'portfolio/favicon.ico' %}">
+    {% block extracss %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-text">
+                <h1>Photography Website</h1>
+                <p>Another photography website</p>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'about' %}">About</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Photography Website. All rights reserved.</p>
+    </footer>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

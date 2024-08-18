@@ -1,0 +1,19 @@
+# Core dependencies
+django
+djangorestframework
+python-dotenv
+dj-static
+static3
+django-cors-headers
+
+# Deployment
+gunicorn
+mysql-connector-python
+django-reset-migrations
+
+# Image processing
+pillow
+
+# Development dependencies (optional)
+django-debug-toolbar
+ipython

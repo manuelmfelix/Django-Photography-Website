@@ -1,0 +1,90 @@
+
+body, html {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+header {
+    width: 95%;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+body.header-visible header {
+    display: flex; /* Show the header when body has class 'header-visible' */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.menu {
+    font-family: Helvetica;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    text-decoration: none !important;
+    
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.menu ul li a:hover {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+footer {
+    font-family: Helvetica;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid black; /* Add this line to create the thin black border */
+}

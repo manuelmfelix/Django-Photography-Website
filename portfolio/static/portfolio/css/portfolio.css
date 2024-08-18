@@ -1,0 +1,146 @@
+body, html {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+header {
+    width: 95%;
+    padding: 20px 40px;
+    border-bottom: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+body.header-visible header {
+    display: flex; /* Show the header when body has class 'header-visible' */
+}
+
+.main-image-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.main-image-container img {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    object-fit: cover; /* Crop image */
+    object-position: top left; /* Crop from top left */
+    display: block;
+}
+
+.text-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    font-size: 1.2em;
+}
+
+.left-column {
+    flex: 0 0 auto;
+    width: calc(50% - 15px); /* Adjust width as needed */
+    padding-right: 15px; /* Adjust padding between columns */
+    padding-left: 60px;
+    box-sizing: border-box;
+}
+
+.right-column {
+    font-family: Helvetica;
+    font-weight: 300;
+    flex: 0 0 auto;
+    width: calc(50% - 15px); /* Adjust width as needed */
+    padding-left: 15px; /* Adjust padding between columns */
+    padding-right: 60px;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+.text-section h2 {
+    font-size: 1.8em;
+}
+
+
+.scroll-gallery-container {
+    overflow-x: auto;
+    position: relative;
+    margin-top: 10px;
+}
+
+.scroll-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px 0;
+    scrollbar-gutter: stable both-edges; /* Ensures space for scrollbar */
+}
+
+.scroll-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+.scroll-item img {
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Custom scrollbar styling */
+.scroll-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-gallery::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+.scroll-gallery:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* CSS for the display container */
+.display-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.display-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

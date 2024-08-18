@@ -1,0 +1,31 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+{% endblock %}
+{% block title %}Home - Photography Website{% endblock %}
+
+{% block content %}
+<div class="masonry-grid">
+    {% for catalog in catalogs %}
+        <div class="masonry-item">
+            <a href="{% url 'portfolio' catalog.id %}">
+                <div class="image-container">
+                    <img src="{{ catalog.cover_image }}" alt="{{ catalog.name }}">
+                    <!--img src="{{ catalog.cover_image.url }}" alt="{{ catalog.name }}"-->
+                    <span class="catalog-name">{{ catalog.name }}</span>
+                    <span class="catalog-year">{{ catalog.year }}</span>
+                    <!-- Add this line -->
+                    <div class="image-overlay"></div>
+                </div>
+                <h2>{{ catalog.name }}</h2>
+                <br></br>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'portfolio/js/masonry.js' %}"></script>
+{% endblock %}
