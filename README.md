@@ -1,4 +1,4 @@
-#Django Photography Website
+Django Photography Website
 
 This minimalistic photography website has only 3 types of pages: Home, About and the portfolios.
 
